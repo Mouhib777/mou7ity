@@ -4,6 +4,7 @@
 
 // import 'package:agri_vision/screens/registerScreen.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:animated_snack_bar/animated_snack_bar.dart';
 // import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -30,11 +31,12 @@ class _loginScreenState extends State<loginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Text(""),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         title: FadeIn(
           child: Text(
-            "AgriVision",
+            "Mou7iti",
             style: GoogleFonts.montserratAlternates(
                 color: color1,
                 fontWeight: FontWeight.w800,
@@ -195,11 +197,11 @@ class _loginScreenState extends State<loginScreen> {
                     await FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: email!.trim(), password: password!.trim());
 
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => navBar(),
-                        ));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => navBar(),
+                    //     ));
                   } on FirebaseAuthException catch (ex) {
                     if (ex.code == 'user-not-found') {
                       AnimatedSnackBar.material(
@@ -234,11 +236,14 @@ class _loginScreenState extends State<loginScreen> {
                 },
                 child: Text(
                   "Login",
-                  style: GoogleFonts.poppins(
-                      fontSize: 20, fontWeight: FontWeight.w600),
+                  style: GoogleFonts.montserrat(
+                      fontSize: 23,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.w600),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: primaryColor,
+                  backgroundColor: color1,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(35.0)),
                 ),
@@ -266,15 +271,15 @@ class _loginScreenState extends State<loginScreen> {
                   child: Text(
                     "Create an account",
                     style: GoogleFonts.montserrat(
-                        color: primaryColor,
+                        color: color1,
                         fontWeight: FontWeight.w600,
                         fontSize: 16),
                   ),
                   onTap: () {
-                    Navigator.of(context).push(PageRouteBuilder(
-                        transitionDuration: Duration.zero,
-                        pageBuilder: (context, animation, secondary) =>
-                            registerScreen()));
+                    // Navigator.of(context).push(PageRouteBuilder(
+                    //     transitionDuration: Duration.zero,
+                    //     pageBuilder: (context, animation, secondary) =>
+                    //         registerScreen()));
                   },
                 )
               ],

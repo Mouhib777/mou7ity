@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/Auth/login.dart';
 import 'package:flutter_application_4/screens/Auth/welcome.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,11 +16,11 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(hours: 2), () async {
+    Timer(Duration(seconds: 2), () async {
       Navigator.of(context).push(PageRouteBuilder(
           transitionDuration: Duration.zero,
           pageBuilder: (context, animation, secondaryAnimation) =>
-              WelcomeScreen()));
+              loginScreen()));
     });
   }
 
