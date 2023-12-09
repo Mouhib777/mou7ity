@@ -1,10 +1,6 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:agri_vision/constant/constant.dart';
-import 'package:agri_vision/navBar/navBar.dart';
-import 'package:agri_vision/screens/additional/termsScreen.dart';
-import 'package:agri_vision/screens/loginScreen.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,6 +10,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/Auth/login.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -65,7 +63,7 @@ class _registerScreenState extends State<registerScreen> {
             title: Text(
               "AgriVision",
               style: GoogleFonts.montserratAlternates(
-                  color: primaryColor,
+                  color: color1,
                   fontWeight: FontWeight.w800,
                   letterSpacing: 1,
                   fontSize: 26),
@@ -126,12 +124,12 @@ class _registerScreenState extends State<registerScreen> {
                       alertBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50.0),
                         side: BorderSide(
-                          color: primaryColor,
+                          color: color1,
                         ),
                       ),
                       titleStyle: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: primaryColor,
+                          color: color1,
                           fontWeight: FontWeight.bold),
                     );
 
@@ -150,7 +148,7 @@ class _registerScreenState extends State<registerScreen> {
                             handle_image_gallery();
                             Navigator.pop(context);
                           },
-                          color: primaryColor,
+                          color: color1,
                           radius: BorderRadius.circular(10.0),
                         ),
                         DialogButton(
@@ -162,7 +160,7 @@ class _registerScreenState extends State<registerScreen> {
                             handle_image_camera();
                             Navigator.pop(context);
                           },
-                          color: primaryColor,
+                          color: color1,
                           radius: BorderRadius.circular(10.0),
                         ),
                       ],
@@ -372,14 +370,14 @@ class _registerScreenState extends State<registerScreen> {
                             child: Text(
                               "the terms and conditions",
                               style: GoogleFonts.montserratAlternates(
-                                  fontSize: 14, color: primaryColor),
+                                  fontSize: 14, color: color1),
                             ),
                             onTap: () {
-                              Navigator.of(context).push(PageRouteBuilder(
-                                  transitionDuration: Duration.zero,
-                                  pageBuilder: (context, animation,
-                                          secondaryAnimation) =>
-                                      termsScreen()));
+                              // Navigator.of(context).push(PageRouteBuilder(
+                              //     transitionDuration: Duration.zero,
+                              //     pageBuilder: (context, animation,
+                              //             secondaryAnimation) =>
+                              //         termsScreen()));
                             },
                           ),
                         ],
@@ -452,11 +450,11 @@ class _registerScreenState extends State<registerScreen> {
                                     "enabled": "true",
                                     "management": "enabled"
                                   });
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => navBar(),
-                                      ));
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //       builder: (context) => navBar(),
+                                  //     ));
 
                                   EasyLoading.showSuccess(
                                       'user with name $f_name was created');
@@ -508,7 +506,7 @@ class _registerScreenState extends State<registerScreen> {
                           fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor,
+                      backgroundColor: color1,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(35.0)),
                     ),
@@ -541,7 +539,7 @@ class _registerScreenState extends State<registerScreen> {
                           "Login here",
                           style: GoogleFonts.montserratAlternates(
                               fontSize: 14,
-                              color: primaryColor,
+                              color: color1,
                               fontWeight: FontWeight.w500),
                         ),
                         onTap: () {

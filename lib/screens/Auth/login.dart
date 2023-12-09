@@ -9,6 +9,7 @@ import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/Auth/register.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class loginScreen extends StatefulWidget {
@@ -276,10 +277,10 @@ class _loginScreenState extends State<loginScreen> {
                         fontSize: 16),
                   ),
                   onTap: () {
-                    // Navigator.of(context).push(PageRouteBuilder(
-                    //     transitionDuration: Duration.zero,
-                    //     pageBuilder: (context, animation, secondary) =>
-                    //         registerScreen()));
+                    Navigator.of(context).push(PageRouteBuilder(
+                        transitionDuration: Duration.zero,
+                        pageBuilder: (context, animation, secondary) =>
+                            registerScreen()));
                   },
                 )
               ],
@@ -289,89 +290,7 @@ class _loginScreenState extends State<loginScreen> {
         SizedBox(
           height: 30,
         ),
-        // FadeIn(
-        //   delay: Duration(milliseconds: 1500),
-        //   child: SizedBox(
-        //     child: Column(
-        //       children: [
-        //         Text(
-        //           'Or continue with',
-        //           style: GoogleFonts.montserrat(
-        //               fontSize: 15, fontWeight: FontWeight.w400),
-        //         ),
-        //         SizedBox(
-        //           height: 30,
-        //         ),
-        //         Row(
-        //           mainAxisAlignment: MainAxisAlignment.center,
-        //           children: [
-        //             InkWell(
-        //               child: Image.asset(
-        //                 "assets/images/facebook.png",
-        //                 height: 40,
-        //               ),
-        //               onTap: () {
-        //                 // _signInWithFacebook();
-        //               },
-        //             ),
-        //             SizedBox(
-        //               width: 40,
-        //             ),
-        //             InkWell(
-        //               child: Image.asset(
-        //                 "assets/images/google.png",
-        //                 height: 40,
-        //               ),
-        //               onTap: () {},
-        //             )
-        //           ],
-        //         )
-        //       ],
-        //     ),
-        //   ),
-        // ),
       ]))),
     );
   }
-
-  // Future<void> _signInWithFacebook() async {
-  //   setState(() {
-  //     _isLoading = true;
-  //   });
-
-  //   try {
-  //     // Login to Facebook
-  //     final LoginResult result = await FacebookAuth.instance.login();
-
-  //     // Get access token
-  //     final accessToken = result.accessToken!.token;
-
-  //     // Authenticate with Firebase using Facebook access token
-  //     final AuthCredential credential =
-  //         FacebookAuthProvider.credential(accessToken);
-
-  //     final UserCredential userCredential =
-  //         await _auth.signInWithCredential(credential);
-  //     _user = userCredential.user;
-
-  //     // Store user data in Firestore
-  //     await _firestore.collection('user').doc(_user!.uid).set({
-  //       'full name': _user!.displayName,
-  //       'email': _user!.email,
-  //       'photoUrl': _user!.photoURL,
-  //       'id': _user!.uid
-  //       // Add other user data as needed
-  //     });
-  //   } on FirebaseAuthException catch (e) {
-  //     // Handle Firebase Auth exceptions
-  //     print('FirebaseAuthException: $e');
-  //   } catch (e) {
-  //     // Handle other exceptions
-  //     print('Error: $e');
-  //   } finally {
-  //     setState(() {
-  //       _isLoading = false;
-  //     });
-  //   }
-  // }
 }
