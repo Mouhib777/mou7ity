@@ -1,0 +1,45 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/Auth/welcome.dart';
+import 'package:google_fonts/google_fonts.dart';
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Timer(Duration(hours: 2), () async {
+      Navigator.of(context).push(PageRouteBuilder(
+          transitionDuration: Duration.zero,
+          pageBuilder: (context, animation, secondaryAnimation) =>
+              WelcomeScreen()));
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/logo.png"), 
+            Text("Mou7ity", 
+            style: GoogleFonts.montserrat(
+              color: color1 , 
+              fontSize: 20 , 
+              fontWeight: FontWeight.w500            ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
