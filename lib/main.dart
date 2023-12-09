@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/firebase_options.dart';
 import 'package:flutter_application_4/screens/SplashScreen.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Mou7iti',
       theme: myTheme,
+      builder: EasyLoading.init(),
       home: SplashScreen(),
     );
   }
