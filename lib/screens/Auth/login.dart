@@ -35,15 +35,13 @@ class _loginScreenState extends State<loginScreen> {
         leading: Text(""),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
-        title: FadeIn(
-          child: Text(
-            "Mou7iti",
-            style: GoogleFonts.montserratAlternates(
-                color: color1,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 1,
-                fontSize: 26),
-          ),
+        title: Text(
+          "Mou7iti",
+          style: GoogleFonts.montserratAlternates(
+              color: color1,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 1,
+              fontSize: 26),
         ),
         centerTitle: true,
       ),

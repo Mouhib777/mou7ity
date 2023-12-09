@@ -61,7 +61,7 @@ class _registerScreenState extends State<registerScreen> {
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             title: Text(
-              "AgriVision",
+              "Mou7iti",
               style: GoogleFonts.montserratAlternates(
                   color: color1,
                   fontWeight: FontWeight.w800,
@@ -386,7 +386,7 @@ class _registerScreenState extends State<registerScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            'of AgriVision',
+                            'of Mou7iti',
                             style: GoogleFonts.montserratAlternates(
                               fontSize: 14,
                             ),
