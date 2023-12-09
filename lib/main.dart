@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/firebase_options.dart';
-import 'package:flutter_application_4/screens/SplashScreen.dart';
+import 'package:flutter_application_4/screens/Splash/SplashScreen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 void main() async {
