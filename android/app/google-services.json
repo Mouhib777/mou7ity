@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799205185986",
+    "project_id": "mou7ity",
+    "storage_bucket": "mou7ity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799205185986:android:456981aeb068f41e1f5e5b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARqLrsIIk88FJ_fdkKBwtr3e5THmnQa28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
