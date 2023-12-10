@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Text('Error: ${snapshot.error}');
                     } else {
                       Map<String, dynamic> weatherData = snapshot.data!;
-      
+
                       return Padding(
                         padding: EdgeInsets.only(
                             left: screenWidth * 0.0, right: screenWidth * 0.0),
@@ -86,14 +86,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: color1,
                                   borderRadius: BorderRadius.circular(25)),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.only(
                                         left: screenWidth * 0.05,
                                         right: screenWidth * 0.015),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -154,7 +156,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   width: 150,
                                                 )
                                               : weatherData['current']
-                                                          ['condition']['text'] ==
+                                                              ['condition']
+                                                          ['text'] ==
                                                       "Overcast"
                                                   ? Image.asset(
                                                       "assets/images/overcast.png",
@@ -170,8 +173,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           height: 150,
                                                           width: 150,
                                                         )
-                                                      : weatherData['current'][
-                                                                      'condition']
+                                                      : weatherData['current']
+                                                                      ['condition']
                                                                   ['text'] ==
                                                               "Showers"
                                                           ? Image.asset(
@@ -210,24 +213,26 @@ class _HomeScreenState extends State<HomeScreen> {
                                       borderRadius: BorderRadius.circular(15)),
                                   child: Center(
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Text("Wind", 
-                                        style: GoogleFonts.montserrat(
-                                          color: color1 ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 18
-                                        ),
-                                        ),
-                                        SizedBox(height: screenHeight*0.01,),
                                         Text(
-                                            "${weatherData['current']['wind_kph']} km/h", 
-                                              style: GoogleFonts.montserrat(
-                                          color: Colors.black ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 18
+                                          "Wind",
+                                          style: GoogleFonts.montserrat(
+                                              color: color1,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 18),
                                         ),
-                                            )
+                                        SizedBox(
+                                          height: screenHeight * 0.01,
+                                        ),
+                                        Text(
+                                          "${weatherData['current']['wind_kph']} km/h",
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 18),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -238,26 +243,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                       color: Colors.grey.withOpacity(0.5),
                                       borderRadius: BorderRadius.circular(15)),
-                                          child: Center(
+                                  child: Center(
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Text("Wind Dir", 
-                                        style: GoogleFonts.montserrat(
-                                          color: color1 ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 18
-                                        ),
-                                        ),
-                                        SizedBox(height: screenHeight*0.01,),
                                         Text(
-                                            "${weatherData['current']['wind_dir']}", 
-                                              style: GoogleFonts.montserrat(
-                                          color: Colors.black ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 18
+                                          "Wind Dir",
+                                          style: GoogleFonts.montserrat(
+                                              color: color1,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 18),
                                         ),
-                                            )
+                                        SizedBox(
+                                          height: screenHeight * 0.01,
+                                        ),
+                                        Text(
+                                          "${weatherData['current']['wind_dir']}",
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 18),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -268,26 +275,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                       color: Colors.grey.withOpacity(0.5),
                                       borderRadius: BorderRadius.circular(15)),
-                                          child: Center(
+                                  child: Center(
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Text("Pressure", 
-                                        style: GoogleFonts.montserrat(
-                                          color: color1 ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 18
-                                        ),
-                                        ),
-                                        SizedBox(height: screenHeight*0.01,),
                                         Text(
-                                            "${weatherData['current']['pressure_mb']} mb", 
-                                              style: GoogleFonts.montserrat(
-                                          color: Colors.black ,
-                                          fontWeight: FontWeight.w700, 
-                                          fontSize: 15
+                                          "Pressure",
+                                          style: GoogleFonts.montserrat(
+                                              color: color1,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 18),
                                         ),
-                                            )
+                                        SizedBox(
+                                          height: screenHeight * 0.01,
+                                        ),
+                                        Text(
+                                          "${weatherData['current']['pressure_mb']} mb",
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 15),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -301,48 +310,55 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              SizedBox(height: screenHeight*0.05,) , 
+              SizedBox(
+                height: screenHeight * 0.05,
+              ),
               Column(
                 children: [
                   Row(
                     children: [
-                      Text("Tips", 
-                      style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.bold , 
-                        color: Colors.black , 
-                        fontSize: 25
-                      ),
+                      Text(
+                        "Tips",
+                        style: GoogleFonts.montserrat(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                            fontSize: 25),
                       ),
                     ],
                   ),
-                  SizedBox(height: screenHeight*0.05,) ,
+                  SizedBox(
+                    height: screenHeight * 0.05,
+                  ),
                   Container(
-                    height: screenHeight*0.15,
-                    width: screenWidth*0.9,
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.9,
                     decoration: BoxDecoration(
-                      color: Colors.red , 
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                  ), 
-                  SizedBox(height: screenHeight*0.01,),
-                   Container(
-                    height: screenHeight*0.15,
-                    width: screenWidth*0.9,
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(15)),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.01,
+                  ),
+                  Container(
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.9,
                     decoration: BoxDecoration(
-                      color: Colors.greenAccent , 
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                  ), 
-                  SizedBox(height: screenHeight*0.01,),
-                   Container(
-                    height: screenHeight*0.15,
-                    width: screenWidth*0.9,
+                        color: Colors.greenAccent,
+                        borderRadius: BorderRadius.circular(15)),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.01,
+                  ),
+                  Container(
+                    height: screenHeight * 0.15,
+                    width: screenWidth * 0.9,
                     decoration: BoxDecoration(
-                      color: Colors.amber , 
-                      borderRadius: BorderRadius.circular(15)
-                    ),
-                  ), 
-                  SizedBox(height: screenHeight*0.01,),
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(15)),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.01,
+                  ),
                 ],
               )
             ],
