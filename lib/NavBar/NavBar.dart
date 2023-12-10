@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/NavBar/Weather.dart';
 import 'package:flutter_application_4/screens/NavBar/assistant.dart';
+import 'package:flutter_application_4/screens/NavBar/chat.dart';
 import 'package:flutter_application_4/screens/NavBar/home.dart';
+import 'package:flutter_application_4/screens/NavBar/sensors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class navBar extends StatefulWidget {
   final int initialPage;
-  final String token;
-  // final String? name;
+
+
   const navBar({
     super.key,
-    required this.initialPage,
-    required this.token,
-    // required this.name,
+    required this.initialPage
   });
 
   @override
@@ -32,13 +32,9 @@ class _navBarState extends State<navBar> {
       return [
         HomeScreen(),
         WeatherScreen(),
-        Assistant()
-        WalletScreen(
-          token: widget.token,
-        ),
-        ProfileScreen(
-          user_token: widget.token,
-        )
+        Assistant(),
+        Sensors(),
+       ChatScreen()
       ];
     }
 
@@ -46,8 +42,8 @@ class _navBarState extends State<navBar> {
       return [
         PersistentBottomNavBarItem(
           iconSize: 30,
-          icon: LineIcon.home(),
-          title: (AppLocalizations.of(context)!.translate('home')),
+          icon: LineIcon.tree(),
+          title: "Home",
           textStyle: GoogleFonts.dmSans(
             fontSize: 10,
             fontWeight: FontWeight.w400,
@@ -57,8 +53,8 @@ class _navBarState extends State<navBar> {
         ),
         PersistentBottomNavBarItem(
           iconSize: 32,
-          icon: LineIcon.telegram(),
-          title: (AppLocalizations.of(context)!.translate("send shipment")),
+          icon: LineIcon.cloud(),
+          title: "Weather",
           textStyle: GoogleFonts.dmSans(
             fontSize: 10,
             fontWeight: FontWeight.w400,
@@ -68,8 +64,8 @@ class _navBarState extends State<navBar> {
         ),
         PersistentBottomNavBarItem(
           iconSize: 32,
-          icon: LineIcon.box(),
-          title: (AppLocalizations.of(context)!.translate("shipment")),
+          icon: LineIcon.helpingHands(),
+          title: "Assistant",
           textStyle: GoogleFonts.dmSans(
             fontSize: 10,
             fontWeight: FontWeight.w400,
@@ -79,8 +75,8 @@ class _navBarState extends State<navBar> {
         ),
         PersistentBottomNavBarItem(
           iconSize: 32,
-          icon: LineIcon.wallet(),
-          title: (AppLocalizations.of(context)!.translate("wallet")),
+          icon: LineIcon.medicalNotes(),
+          title: "Sensors",
           textStyle: GoogleFonts.dmSans(
             fontSize: 10,
             fontWeight: FontWeight.w400,
@@ -90,8 +86,8 @@ class _navBarState extends State<navBar> {
         ),
         PersistentBottomNavBarItem(
           iconSize: 32,
-          icon: LineIcon.user(),
-          title: (AppLocalizations.of(context)!.translate("profile")),
+          icon: LineIcon.peopleCarry(),
+          title: "Community",
           textStyle: GoogleFonts.dmSans(
             fontSize: 10,
             fontWeight: FontWeight.w400,

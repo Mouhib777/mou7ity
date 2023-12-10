@@ -8,6 +8,7 @@ import 'package:animated_snack_bar/animated_snack_bar.dart';
 // import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/NavBar/NavBar.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/Auth/register.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -196,11 +197,13 @@ class _loginScreenState extends State<loginScreen> {
                     await FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: email!.trim(), password: password!.trim());
 
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => navBar(),
-                    //     ));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => navBar(
+                            initialPage: 0,
+                          ),
+                        ));
                   } on FirebaseAuthException catch (ex) {
                     if (ex.code == 'user-not-found') {
                       AnimatedSnackBar.material(

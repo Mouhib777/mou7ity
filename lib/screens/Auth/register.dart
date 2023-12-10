@@ -10,6 +10,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_4/NavBar/NavBar.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/Auth/login.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -450,14 +451,16 @@ class _registerScreenState extends State<registerScreen> {
                                     "enabled": "true",
                                     "management": "enabled"
                                   });
-                                  // Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //       builder: (context) => navBar(),
-                                  //     ));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => navBar(
+                                          initialPage: 0,
+                                        ),
+                                      ));
 
                                   EasyLoading.showSuccess(
-                                      'user with name $f_name was created');
+                                      'Welcome $f_name');
                                 }
                               } on FirebaseAuthException catch (e) {
                                 if (e.code == 'weak-password') {

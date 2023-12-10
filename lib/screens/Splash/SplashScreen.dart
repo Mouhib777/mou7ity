@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/NavBar/NavBar.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/Auth/login.dart';
 import 'package:flutter_application_4/screens/Auth/welcome.dart';
@@ -17,10 +19,25 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 2), () async {
-      Navigator.of(context).push(PageRouteBuilder(
-          transitionDuration: Duration.zero,
-          pageBuilder: (context, animation, secondaryAnimation) =>
-              loginScreen()));
+       FirebaseAuth.instance.authStateChanges().listen((User? user) {
+        if (user == null) {
+          Navigator.of(context).push(PageRouteBuilder(
+              transitionDuration: Duration.zero,
+              pageBuilder: (context, animation, secondaryAnimation) =>
+                  loginScreen()));
+        } else {
+          Navigator.of(context).push(PageRouteBuilder(
+              transitionDuration: Duration.zero,
+              pageBuilder: (context, animation, secondaryAnimation) =>
+                  navBar(
+                    initialPage: 0,
+                  )));
+        }
+      });
+      // Navigator.of(context).push(PageRouteBuilder(
+      //     transitionDuration: Duration.zero,
+      //     pageBuilder: (context, animation, secondaryAnimation) =>
+      //         loginScreen()));
     });
   }
 
