@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 
 class WeatherApi {
@@ -11,7 +13,12 @@ class WeatherApi {
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
-      // Parse and handle the weather data here
+      Map<String, dynamic> data = jsonDecode(response.body);
+      String cityName = data['location']['name'];
+      double temperatureCelsius = data['current']['temp_c'];
+      String conditionText = data['current']['condition']['text'];
+      String iconUrl = 'https:${data['current']['condition']['icon']}';
+      double windSpeedKph = data['current']['wind_kph'];
       print(response.body);
     } else {
       // Handle errors
