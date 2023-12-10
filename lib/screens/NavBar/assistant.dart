@@ -34,81 +34,96 @@ class _AssistantState extends State<Assistant> {
                 SizedBox(
                   height: screenHeight * 0.09,
                 ),
-                Container(
-                  height: screenHeight * 0.2,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                      color: color1,
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.4),
-                              BlendMode.colorBurn),
-                          fit: BoxFit.cover,
-                          image:
-                              AssetImage("assets/background/background1.jpg")),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                    child: Text(
-                      "Arid places founded by community",
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                      textAlign: TextAlign.center,
+                InkWell(
+                  onTap: () {
+                    print("1");
+                  },
+                  child: Container(
+                    height: screenHeight * 0.2,
+                    width: screenWidth,
+                    decoration: BoxDecoration(
+                        color: color1,
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.4),
+                                BlendMode.colorBurn),
+                            fit: BoxFit.cover,
+                            image:
+                                AssetImage("assets/background/background1.jpg")),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                      child: Text(
+                        "Arid places founded by community",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                Container(
-                  height: screenHeight * 0.2,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                      color: color1,
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.6),
-                              BlendMode.colorBurn),
-                          fit: BoxFit.cover,
-                          image:
-                              AssetImage("assets/background/background2.jpeg")),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                    child: Text(
-                      "Share and discuss your worries with the community.",
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                      textAlign: TextAlign.center,
+                InkWell(
+                  onTap: () {
+                    print("2");
+                  },
+                  child: Container(
+                    height: screenHeight * 0.2,
+                    width: screenWidth,
+                    decoration: BoxDecoration(
+                        color: color1,
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.6),
+                                BlendMode.colorBurn),
+                            fit: BoxFit.cover,
+                            image:
+                                AssetImage("assets/background/background2.jpeg")),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                      child: Text(
+                        "Share and discuss your worries with the community.",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                Container(
-                  height: screenHeight * 0.2,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                      color: color1,
-                      image: DecorationImage(
-                          colorFilter: ColorFilter.mode(
-                              Colors.black.withOpacity(0.6),
-                              BlendMode.colorBurn),
-                          fit: BoxFit.cover,
-                          image:
-                              AssetImage("assets/background/background3.jpg")),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                    child: Text(
-                      "Contribute your solution to benefit the community.",
-                      style: GoogleFonts.montserrat(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                      textAlign: TextAlign.center,
+                InkWell(
+                  onTap: () {
+                    print("3");
+                  },
+                  child: Container(
+                    height: screenHeight * 0.2,
+                    width: screenWidth,
+                    decoration: BoxDecoration(
+                        color: color1,
+                        image: DecorationImage(
+                            colorFilter: ColorFilter.mode(
+                                Colors.black.withOpacity(0.6),
+                                BlendMode.colorBurn),
+                            fit: BoxFit.cover,
+                            image:
+                                AssetImage("assets/background/background3.jpg")),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                      child: Text(
+                        "Contribute your solution to benefit the community.",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
