@@ -48,6 +48,14 @@ dependencies:
   rflutter_alert: ^2.0.4
   firebase_messaging: ^14.6.2
   line_icons: ^2.0.3
+  lottie: ^2.2.0
+  location: ^4.2.0
+  http: ^1.1.0
+  geolocator: ^9.0.2
+  provider: ^5.0.0
+  geocoding: ^2.1.0
+  location_geocoder: ^1.0.5
+  google_maps_flutter: ^2.5.0
 
 dev_dependencies:
   flutter_test:

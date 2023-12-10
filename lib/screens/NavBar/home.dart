@@ -26,10 +26,19 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.only(
+            left: screenWidth * 0.02, right: screenHeight * 0.02),
         child: Column(
           children: [
-            
+            Container(
+              width: screenWidth,
+              height: screenHeight*0.24, 
+              decoration: BoxDecoration(
+                color: color1.withOpacity(0.95), 
+                borderRadius: BorderRadius.circular(20) , 
+                border: Border.all(color: color2)
+              ),
+            )
           ],
         ),
       ),
