@@ -58,7 +58,9 @@ class _AssistantState extends State<Assistant> {
                     ),
                   ),
                 ),
-                SizedBox(height: screenHeight*0.02,), 
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
                 Container(
                   height: screenHeight * 0.2,
                   width: screenWidth,
@@ -83,7 +85,9 @@ class _AssistantState extends State<Assistant> {
                     ),
                   ),
                 ),
-                SizedBox(height: screenHeight*0.02,), 
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
                 Container(
                   height: screenHeight * 0.2,
                   width: screenWidth,
