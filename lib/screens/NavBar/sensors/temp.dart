@@ -1,18 +1,17 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SoilScreen extends StatefulWidget {
-  const SoilScreen({super.key});
+class Temp extends StatefulWidget {
+  const Temp({super.key});
 
   @override
-  State<SoilScreen> createState() => _SoilScreenState();
+  State<Temp> createState() => _TempState();
 }
 
-class _SoilScreenState extends State<SoilScreen> {
+class _TempState extends State<Temp> {
   @override
-  Widget build(BuildContext context) {
+ Widget build(BuildContext context) {
         double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
@@ -29,10 +28,13 @@ class _SoilScreenState extends State<SoilScreen> {
         // ),
         body:Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/soilSensor.png"), 
+              Image.asset("assets/images/temp.png", 
+              height: 200,
+              ), 
               SizedBox(height: screenHeight*0.02,) , 
-              Text("Last value: 780", 
+              Text("Last value", 
               style: GoogleFonts.montserrat(
                 color: color1, 
                 fontWeight: FontWeight.bold , 

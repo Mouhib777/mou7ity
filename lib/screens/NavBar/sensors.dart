@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/NavBar/sensors/rain.dart';
 import 'package:flutter_application_4/screens/NavBar/sensors/soil.dart';
+import 'package:flutter_application_4/screens/NavBar/sensors/temp.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -68,21 +70,32 @@ class _SensorsState extends State<Sensors> {
                         ),
                       ),
                     ),
-                    Container(
-                      height: screenWidth * 0.35,
-                      width: screenWidth * 0.35,
-                      decoration: BoxDecoration(
-                          color: color1.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.black)),
-                           child: Center(
-                        child: Text(
-                          "Rain Gauge Sensor",
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18),
-                          textAlign: TextAlign.center,
+                    InkWell(
+                      onTap: () {
+                          pushNewScreenWithRouteSettings(context,
+                              screen: RainGauge(),
+                              settings: RouteSettings(),
+                              withNavBar: false,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.cupertino
+                                  );
+                      },
+                      child: Container(
+                        height: screenWidth * 0.35,
+                        width: screenWidth * 0.35,
+                        decoration: BoxDecoration(
+                            color: color1.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.black)),
+                             child: Center(
+                          child: Text(
+                            "Rain Gauge Sensor",
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                       ),
                     ),
@@ -94,25 +107,36 @@ class _SensorsState extends State<Sensors> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Container(
-                      height: screenWidth * 0.35,
-                      width: screenWidth * 0.35,
-                      decoration: BoxDecoration(
-                          color: color1.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.black)),
-                      child: Center(
-                        child: Text(
-                          "TemperatureHumidity Sensor",
-                          style: GoogleFonts.montserrat(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 18),
-                          textAlign: TextAlign.center,
+                    InkWell(
+                      onTap: () {
+                          pushNewScreenWithRouteSettings(context,
+                              screen: Temp(),
+                              settings: RouteSettings(),
+                              withNavBar: false,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.cupertino
+                                  );
+                      },
+                      child: Container(
+                        height: screenWidth * 0.35,
+                        width: screenWidth * 0.35,
+                        decoration: BoxDecoration(
+                            color: color1.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.black)),
+                        child: Center(
+                          child: Text(
+                            "TemperatureHumidity Sensor",
+                            style: GoogleFonts.montserrat(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
+                        
+                            
                       ),
-                      
-                          
                     ),
                     Container(
                       height: screenWidth * 0.35,

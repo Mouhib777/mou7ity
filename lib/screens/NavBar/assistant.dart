@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/NavBar/assistant/aridplace.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class Assistant extends StatefulWidget {
   const Assistant({super.key});
@@ -36,7 +38,13 @@ class _AssistantState extends State<Assistant> {
                 ),
                 InkWell(
                   onTap: () {
-                    print("1");
+                    pushNewScreenWithRouteSettings(context,
+                              screen:AridPlace(),
+                              settings: RouteSettings(),
+                              withNavBar: false,
+                              pageTransitionAnimation:
+                                  PageTransitionAnimation.cupertino
+                                  );
                   },
                   child: Container(
                     height: screenHeight * 0.2,
