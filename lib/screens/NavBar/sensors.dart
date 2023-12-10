@@ -34,6 +34,28 @@ class _SensorsState extends State<Sensors> {
                 SizedBox(
                   height: screenHeight * 0.09,
                 ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    height: screenWidth * 0.3,
+                    width: screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        color: color1,
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: Colors.black)),
+                  ), 
+                    Container(
+                    height: screenWidth * 0.3,
+                    width: screenWidth * 0.3,
+                    decoration: BoxDecoration(
+                        color: color1,
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: Colors.black)),
+                  ), 
+
+                ],
+              )
                 ],
               ),
         ),
