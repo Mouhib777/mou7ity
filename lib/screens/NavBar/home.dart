@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_4/API_services/weather.dart';
 import 'package:flutter_application_4/Provider/location_provider.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,12 +14,14 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  
   @override
   Widget build(BuildContext context) {
     final locationData = Provider.of<LocationProvider>(context);
     // currentLocation = LatLng(locationData.latitude, locationData.longitude);
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    WeatherApi _weatherApi = WeatherApi() ; 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -35,13 +38,20 @@ class _HomeScreenState extends State<HomeScreen> {
             left: screenWidth * 0.02, right: screenHeight * 0.02),
         child: Column(
           children: [
-            Container(
-              width: screenWidth,
-              height: screenHeight*0.24, 
-              decoration: BoxDecoration(
-                color: color1.withOpacity(0.95), 
-                borderRadius: BorderRadius.circular(20) , 
-                border: Border.all(color: color2)
+            InkWell(
+              onTap: () {
+                _weatherApi.getWeatherData(
+                    latitude: locationData.latitude,
+                    longitude: locationData.longitude);
+              },
+              child: Container(
+                width: screenWidth,
+                height: screenHeight * 0.24,
+                decoration: BoxDecoration(
+                    color: color1.withOpacity(0.95),
+                    borderRadius: BorderRadius.circular(20), 
+                  border: Border.all(color: color2)
+                ),
               ),
             )
           ],
