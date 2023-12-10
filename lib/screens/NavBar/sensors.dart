@@ -16,13 +16,14 @@ class _SensorsState extends State<Sensors> {
     double screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
         child: Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(
-              left: screenWidth * 0.04, right: screenWidth * 0.04),
-              child: Column(
-                children: [
-                  SizedBox(
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.only(
+                left: screenWidth * 0.04, right: screenWidth * 0.04),
+            child: Column(
+              children: [
+                SizedBox(
                   height: screenHeight * 0.05,
                 ),
                 Text(
@@ -32,82 +33,80 @@ class _SensorsState extends State<Sensors> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
+                  height: screenHeight * 0.07,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                    Container(
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                  ],
+                ),
+                SizedBox(
                   height: screenHeight * 0.09,
                 ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
                     Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
-
-                ],
-                
-              ), 
-              SizedBox(height: screenHeight*0.09,),
-                   Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
                     Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
-
-                ],
-                
-              ), 
-              SizedBox(height: screenHeight*0.09,),
-                   Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: screenHeight * 0.09,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
                     Container(
-                    height: screenWidth * 0.35,
-                    width: screenWidth * 0.35,
-                    decoration: BoxDecoration(
-                        color: color1,
-                        borderRadius: BorderRadius.circular(15),
-                        border: Border.all(color: Colors.black)),
-                  ), 
-
-                ],
-                
-              ), 
-              
-                ],
-              ),
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                    Container(
+                      height: screenWidth * 0.35,
+                      width: screenWidth * 0.35,
+                      decoration: BoxDecoration(
+                          color: color1.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     ));
