@@ -33,18 +33,34 @@ class _AridPlaceState extends State<AridPlace> {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () {
-                pushNewScreenWithRouteSettings(context,
-                    screen: AddPlace(),
-                    settings: RouteSettings(),
-                    withNavBar: false,
-                    pageTransitionAnimation: PageTransitionAnimation.cupertino);
-              },
-              icon: Icon(Icons.add))
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: ClipRRect(
+           borderRadius: BorderRadius.circular(15.0), // 
+          child: AppBar(
+            title: Text("Volunteer to transform our town", 
+            style: GoogleFonts.montserrat(
+              fontSize: 14,
+              fontWeight: FontWeight.w600 
+
+            ),
+            
+            ),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    pushNewScreenWithRouteSettings(context,
+                        screen: AddPlace(),
+                        settings: RouteSettings(),
+                        withNavBar: false,
+                        pageTransitionAnimation: PageTransitionAnimation.cupertino);
+                  },
+                  icon: Icon(Icons.add))
+            ],
+            
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -138,7 +154,7 @@ class _AridPlaceState extends State<AridPlace> {
                         height: screenHeight * 0.01,
                       ),
                       Text(
-                        "Our town seeks a green makeover, envisioning transformed empty spaces into vibrant, sustainable landscapes for a thriving community.",
+                        "Join us in our green town! Your efforts can turn empty spaces into vibrant, sustainable havens. Be part of a community committed to a greener future!",
                         style: GoogleFonts.montserrat(),
                         textAlign: TextAlign.center,
                       ),
