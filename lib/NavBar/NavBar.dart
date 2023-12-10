@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
+import 'package:flutter_application_4/screens/NavBar/Weather.dart';
+import 'package:flutter_application_4/screens/NavBar/assistant.dart';
+import 'package:flutter_application_4/screens/NavBar/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -27,16 +30,9 @@ class _navBarState extends State<navBar> {
     _controller = PersistentTabController(initialIndex: widget.initialPage);
     List<Widget> _buildScreens() {
       return [
-        HomeScreen(
-          token: widget.token,
-        ),
-        NextSendshipmentScreen(
-          token: widget.token,
-          // selectedCity: '',
-        ),
-        ShipmentScreen(
-          user_token: widget.token,
-        ),
+        HomeScreen(),
+        WeatherScreen(),
+        Assistant()
         WalletScreen(
           token: widget.token,
         ),
