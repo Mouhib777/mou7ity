@@ -3,10 +3,13 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/NavBar/NavBar.dart';
+import 'package:flutter_application_4/Provider/location_provider.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/Auth/login.dart';
 import 'package:flutter_application_4/screens/Auth/welcome.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(Duration(seconds: 2), () async {
-       FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      final locationData =
+          Provider.of<LocationProvider>(context, listen: false);
+      LocationPermission permission;
+      permission = await Geolocator.requestPermission();
+      await locationData.getCurrentPosition();
+      FirebaseAuth.instance.authStateChanges().listen((User? user) {
         if (user == null) {
           Navigator.of(context).push(PageRouteBuilder(
               transitionDuration: Duration.zero,
@@ -28,8 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
         } else {
           Navigator.of(context).push(PageRouteBuilder(
               transitionDuration: Duration.zero,
-              pageBuilder: (context, animation, secondaryAnimation) =>
-                  navBar(
+              pageBuilder: (context, animation, secondaryAnimation) => navBar(
                     initialPage: 0,
                   )));
         }
