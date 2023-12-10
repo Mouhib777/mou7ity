@@ -83,96 +83,96 @@ class _StartScreenState extends State<StartScreen> {
               ),
             ),
           ),
-          // Positioned(
-          //   child: SizedBox(
-          //     child: Container(
-          //       decoration: BoxDecoration(
-          //         color: color1,
-          //         borderRadius: BorderRadius.only(
-          //           bottomLeft: Radius.circular(50),
-          //           bottomRight: Radius.circular(50),
-          //         ),
-          //       ),
-          //       height: MediaQuery.of(context).size.height * 0.21,
-          //       width: MediaQuery.of(context).size.width,
-          //       child: Padding(
-          //         padding: EdgeInsets.only(
-          //             left: MediaQuery.of(context).size.width * 0.04,
-          //             right: MediaQuery.of(context).size.width * 0.04),
-          //         child: Column(
-          //           crossAxisAlignment: CrossAxisAlignment.center,
-          //           children: [
-          //             ListTile(
-          //               leading: Container(
-          //                 height: MediaQuery.of(context).size.height * 0.07,
-          //                 width: MediaQuery.of(context).size.height * 0.07,
-          //                 decoration: BoxDecoration(
-          //                     borderRadius: BorderRadius.circular(20),
-          //                     color: color2),
-          //                 child: LineIcon.truck(
-          //                   size: MediaQuery.of(context).size.height * 0.04,
-          //                 ),
-          //               ),
-          //               // title: Text(
-          //               //   _locating ? 'Locating...' : locationData.selectedAddress1.toString(),
-          //               //   style: GoogleFonts.montserrat(
-          //               //     color: Colors.black,
-          //               //     fontSize: 15,
-          //               //     fontWeight: FontWeight.w600,
-          //               //   ),
-          //               //   textAlign: TextAlign.center,
-          //               // ),
-          //             ),
-          //             SizedBox(
-          //               height: MediaQuery.of(context).size.height * 0.04,
-          //             ),
-          //             SizedBox(
-          //               width: MediaQuery.of(context).size.width * 0.4,
-          //               child: AbsorbPointer(
-          //                 absorbing: _locating ? true : false,
-          //                 child: Container(
-          //                   width: 170,
-          //                   height: 30,
-          //                   child: ListTile(
-          //                     title: SizedBox(
-          //                       width: MediaQuery.of(context).size.width * 0.3,
-          //                       child: ElevatedButton(
-          //                         onPressed: () async {
-          //                           // User? user = FirebaseAuth.instance.currentUser;
-          //                           // await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
-          //                           //   "PickUp_latitude": locationData.latitude,
-          //                           //   "PickUp_longitude": locationData.longitude,
-          //                           //   "PickUp_address": locationData.selectedAddress1.toString(),
-          //                           //   "distance": ""
-          //                           // });
-          //                           Navigator.pop(context);
-          //                         },
-          //                         style: ElevatedButton.styleFrom(
-          //                           backgroundColor: _locating ? color1 : color1,
-          //                           shape: RoundedRectangleBorder(
-          //                             side: _locating
-          //                                 ? BorderSide(color: Colors.transparent)
-          //                                 : BorderSide(color: Colors.white70),
-          //                             borderRadius: BorderRadius.circular(8.0),
-          //                           ),
-          //                           elevation: _locating ? 0 : 0.5,
-          //                         ),
-          //                         child: Text(
-          //                           _locating ? "" : 'Select',
-          //                           style: GoogleFonts.montserrat(),
-          //                         ),
-          //                       ),
-          //                     ),
-          //                   ),
-          //                 ),
-          //               ),
-          //             ),
-          //           ],
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Positioned(
+            child: SizedBox(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: color1,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50),
+                  ),
+                ),
+                height: MediaQuery.of(context).size.height * 0.21,
+                width: MediaQuery.of(context).size.width,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.04,
+                      right: MediaQuery.of(context).size.width * 0.04),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ListTile(
+                        // leading: Container(
+                        //   height: MediaQuery.of(context).size.height * 0.07,
+                        //   width: MediaQuery.of(context).size.height * 0.07,
+                        //   decoration: BoxDecoration(
+                        //       borderRadius: BorderRadius.circular(20),
+                        //       color: color2),
+                        //   child: LineIcon.truck(
+                        //     size: MediaQuery.of(context).size.height * 0.04,
+                        //   ),
+                        // ),
+                        title: Text(
+                          _locating ? 'Locating...' : locationData.selectedAddress1.toString(),
+                          style: GoogleFonts.montserrat(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.04,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.4,
+                        child: AbsorbPointer(
+                          absorbing: _locating ? true : false,
+                          child: Container(
+                            width: 170,
+                            height: 30,
+                            child: ListTile(
+                              title: SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    // User? user = FirebaseAuth.instance.currentUser;
+                                    // await FirebaseFirestore.instance.collection('users').doc(user!.uid).update({
+                                    //   "PickUp_latitude": locationData.latitude,
+                                    //   "PickUp_longitude": locationData.longitude,
+                                    //   "PickUp_address": locationData.selectedAddress1.toString(),
+                                    //   "distance": ""
+                                    // });
+                                    Navigator.pop(context);
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: _locating ? color1 : color1,
+                                    shape: RoundedRectangleBorder(
+                                      side: _locating
+                                          ? BorderSide(color: Colors.transparent)
+                                          : BorderSide(color: Colors.white70),
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    elevation: _locating ? 0 : 0.5,
+                                  ),
+                                  child: Text(
+                                    _locating ? "" : 'Select',
+                                    style: GoogleFonts.montserrat(),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
