@@ -19,6 +19,9 @@ class WeatherApi {
       String conditionText = data['current']['condition']['text'];
       String iconUrl = 'https:${data['current']['condition']['icon']}';
       double windSpeedKph = data['current']['wind_kph'];
+      int windDegree = data['current']['wind_degree'];
+      String windDirection = data['current']['wind_dir'];
+
       print(response.body);
     } else {
       // Handle errors
