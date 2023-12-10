@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/constant.dart';
 import 'package:flutter_application_4/screens/NavBar/assistant/aridplace.dart';
+import 'package:flutter_application_4/screens/NavBar/assistant/contribute.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -76,7 +77,12 @@ class _AssistantState extends State<Assistant> {
                 ),
                 InkWell(
                   onTap: () {
-                    print("2");
+                    pushNewScreenWithRouteSettings(context,
+                        screen: Contribute(),
+                        settings: RouteSettings(),
+                        withNavBar: false,
+                        pageTransitionAnimation:
+                            PageTransitionAnimation.cupertino);
                   },
                   child: Container(
                     height: screenHeight * 0.2,
@@ -108,7 +114,12 @@ class _AssistantState extends State<Assistant> {
                 ),
                 InkWell(
                   onTap: () {
-                    print("3");
+                    pushNewScreenWithRouteSettings(context,
+                        screen: Contribute(),
+                        settings: RouteSettings(),
+                        withNavBar: false,
+                        pageTransitionAnimation:
+                            PageTransitionAnimation.cupertino);
                   },
                   child: Container(
                     height: screenHeight * 0.2,
