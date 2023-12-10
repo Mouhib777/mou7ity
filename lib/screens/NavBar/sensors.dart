@@ -10,6 +10,11 @@ class Sensors extends StatefulWidget {
 class _SensorsState extends State<Sensors> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+    return SafeArea(
+      child: Scaffold(
+        
+      ));
   }
 }
