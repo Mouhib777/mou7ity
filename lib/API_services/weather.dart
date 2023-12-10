@@ -1,12 +1,12 @@
 import 'package:http/http.dart' as http;
 
 Future<void> getWeatherData({
-  required 
+  required latitude , 
+  required longitude , 
 }) async {
-  final apiKey = 'YOUR_API_KEY';
+  final apiKey = '4ddbbd7b406d494ba23235948230912';
   final city = 'CITY_NAME';
-  final apiUrl = 'https://api.weatherapi.com/v1/current.json?key=$apiKey&q=$city';
-
+  final apiUrl = 'https://api.weatherapi.com/v1/current.json?key=$apiKey&q=${latitude},${longitude}';
   final response = await http.get(Uri.parse(apiUrl));
 
   if (response.statusCode == 200) {
